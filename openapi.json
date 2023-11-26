@@ -2,7 +2,7 @@
   "openapi": "3.0.0",
   "servers": [
     {
-      "url": "https://klaviyo-sync-7l6hyoo68-bant.vercel.app"
+      "url": "https://klaviyo-sync.vercel.app/"
     }
   ],
   "info": {
