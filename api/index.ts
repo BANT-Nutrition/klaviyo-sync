@@ -1,8 +1,11 @@
 import express from "express";
 import swaggerUi from "swagger-ui-express";
+import cors from "cors";
+
 import swaggerDocument from "../openapi.json";
 
 const app = express();
+app.use(cors());
 
 const options = {
   explorer: true,
