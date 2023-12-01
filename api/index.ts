@@ -18,7 +18,7 @@ app.use(
 );
 
 app.get("/api", (_, res) => {
-  res.end(`Hello! from home`);
+  res.end(`Hello from home`);
 });
 
 app.post("/api/item", (req, res) => {
