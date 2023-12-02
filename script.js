@@ -12,5 +12,5 @@ const options = {
 
 fetch(url, options)
   .then((res) => res.json())
-  .then((json) => console.log(JSON.stringify(json, null, 2)))
+  .then((json) => console.log(JSON.stringify(json.links, null, 2)))
   .catch((err) => console.error("error:" + err));
