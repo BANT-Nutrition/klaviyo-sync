@@ -1,0 +1,129 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("asd34asdfrt3qrfvswe6twqrf_PRISMA_URL")
+  directUrl = env("asd34asdfrt3qrfvswe6twqrf_URL_NON_POOLING")
+}
+
+model membership {
+  date_joined             DateTime? @db.Timestamp(6)
+  membership_id           String?   @db.VarChar(255)
+  type                    String?   @db.VarChar(50)
+  first_name              String?   @db.VarChar(255)
+  last_name               String?   @db.VarChar(255)
+  street                  String?   @db.VarChar(255)
+  member_status           String?   @db.VarChar(50)
+  town                    String?   @db.VarChar(255)
+  county                  String?   @db.VarChar(255)
+  region                  String?   @db.VarChar(255)
+  post_code               String?   @db.VarChar(20)
+  member_id               Int       @id(map: "membership_member_id_pk")
+  date_of_birth           DateTime? @db.Date
+  sex                     String?   @db.VarChar(20)
+  renewal_date            DateTime? @db.Date
+  membership_fee          Decimal?  @db.Decimal(10, 2)
+  registration_fee        Decimal?  @db.Decimal(10, 2)
+  on_register             Boolean?
+  home_telephone          String?   @db.VarChar(20)
+  work_telephone          String?   @db.VarChar(20)
+  mobile                  String?   @db.VarChar(20)
+  email                   String?   @db.VarChar(255)
+  display_on_website      Boolean?
+  eblast                  Boolean?
+  complaint               Boolean?
+  press_contact           Boolean?
+  photo                   String?   @db.VarChar(255)
+  admin_notes             String?
+  bant_council            Boolean?
+  seminar                 Boolean?
+  student_sit_in          Boolean?
+  last_modified_date      DateTime? @db.Timestamp(6)
+  agm                     Boolean?
+  ntc                     Boolean?
+  ngc                     Boolean?
+  recruitment             Boolean?
+  events                  Boolean?
+  enews                   Boolean?
+  regional_coordinator    Boolean?
+  renewal                 Boolean?
+  cnhc                    Boolean?
+  cnhc_reg_no             String?   @db.VarChar(255)
+  cnhc_reg_exp_date       DateTime? @db.Date
+  cnhc_exemption          Boolean?
+  cnhc_exemption_exp_date DateTime? @db.Date
+  cpd                     Boolean?
+  cpd_exemption           Boolean?
+  cpd_exemption_exp_date  DateTime? @db.Date
+  cpd_audit_completed     Boolean?
+  cpd_audit_date          DateTime? @db.Date
+  cpd_next_audit_date     DateTime? @db.Date
+  cnhc_exemption_rsn      String?
+  cpd_audit_notes         String?
+  practice_online         Boolean?
+  nonclinical             Boolean?
+  practiceinperson        Boolean?
+}
+
+model old_member {
+  kl_unique_id            String?   @db.VarChar(255)
+  kl_external_id          String?   @db.VarChar(255)
+  date_joined             DateTime? @db.Date
+  membership_id           String?   @db.VarChar(255)
+  type                    String?   @db.VarChar(50)
+  first_name              String?   @db.VarChar(255)
+  last_name               String?   @db.VarChar(255)
+  street                  String?   @db.VarChar(255)
+  member_status           String?   @db.VarChar(50)
+  town                    String?   @db.VarChar(255)
+  county                  String?   @db.VarChar(255)
+  region                  String?   @db.VarChar(255)
+  post_code               String?   @db.VarChar(20)
+  member_id               Int       @id(map: "member_id_pk")
+  date_of_birth           DateTime? @db.Date
+  sex                     String?   @db.VarChar(20)
+  renewal_date            DateTime? @db.Date
+  membership_fee          Decimal?  @db.Decimal(10, 2)
+  registration_fee        Decimal?  @db.Decimal(10, 2)
+  on_register             Boolean?
+  home_telephone          String?   @db.VarChar(20)
+  work_telephone          String?   @db.VarChar(20)
+  mobile                  String?   @db.VarChar(20)
+  email                   String?   @db.VarChar(255)
+  display_on_website      Boolean?
+  eblast                  Boolean?
+  complaint               Boolean?
+  press_contact           Boolean?
+  photo                   String?   @db.VarChar(255)
+  admin_notes             String?
+  bant_council            Boolean?
+  seminar                 Boolean?
+  student_sit_in          Boolean?
+  last_modified_date      DateTime? @db.Timestamp(6)
+  agm                     Boolean?
+  ntc                     Boolean?
+  ngc                     Boolean?
+  recruitment             Boolean?
+  events                  Boolean?
+  enews                   Boolean?
+  regional_coordinator    Boolean?
+  renewal                 Boolean?
+  cnhc                    Boolean?
+  cnhc_reg_no             String?   @db.VarChar(255)
+  cnhc_reg_exp_date       DateTime? @db.Date
+  cnhc_exemption          Boolean?
+  cnhc_exemption_exp_date DateTime? @db.Date
+  cpd                     Boolean?
+  cpd_exemption           Boolean?
+  cpd_exemption_exp_date  DateTime? @db.Date
+  cpd_audit_completed     Boolean?
+  cpd_audit_date          DateTime? @db.Date
+  cpd_next_audit_date     DateTime? @db.Date
+  cnhc_exemption_rsn      String?
+  cpd_audit_notes         String?
+  practice_online         Boolean?
+  nonclinical             Boolean?
+  practiceinperson        Boolean?
+}
